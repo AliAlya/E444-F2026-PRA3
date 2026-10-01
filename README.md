@@ -17,10 +17,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install Flask:
+Install Flask and the extensions used by the examples:
 
 ```bash
-python -m pip install Flask
+python -m pip install Flask Flask-Bootstrap Flask-Moment
 ```
 
 Start the development server:
@@ -37,3 +37,9 @@ Open these pages in a browser:
 The name at the end of the second URL can be changed to test the dynamic route. For example, `/user/Sam` displays `Hello, Sam!`.
 
 Press `Control-C` in the terminal to stop the server. Run `deactivate` when the virtual environment is no longer needed.
+
+## Activity 1.3
+
+For Activity 1.3, I moved the page into Jinja templates and added a Bootstrap navigation bar. The home page displays my name and uses Flask-Moment to show the local date and time in `LLLL` format.
+
+![Activity 1.3 webpage with a navigation bar, personalized heading, and timestamp](screenshots/activity-1-3.png)
