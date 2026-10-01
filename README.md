@@ -20,7 +20,7 @@ source .venv/bin/activate
 Install Flask and the extensions used by the examples:
 
 ```bash
-python -m pip install Flask Flask-Bootstrap Flask-Moment
+python -m pip install Flask Flask-Bootstrap Flask-Moment Flask-WTF email-validator
 ```
 
 Start the development server:
@@ -43,3 +43,15 @@ Press `Control-C` in the terminal to stop the server. Run `deactivate` when the 
 For Activity 1.3, I moved the page into Jinja templates and added a Bootstrap navigation bar. The home page displays my name and uses Flask-Moment to show the local date and time in `LLLL` format.
 
 ![Activity 1.3 webpage with a navigation bar, personalized heading, and timestamp](screenshots/activity-1-3.png)
+
+## Activity 1.4
+
+For Activity 1.4, I added a Flask-WTF form that asks for a name and email address. The form checks that the email address is valid and contains `utoronto`. After a valid submission, the page displays the submitted name and UofT email address.
+
+I tested the required cases:
+
+- A first name and valid UofT email are accepted and displayed.
+- A name entered in the email field produces an invalid email error.
+- A valid non-UofT email produces a UofT email error.
+
+![Activity 1.4 form rejecting a non-UofT email address](screenshots/activity-1-4-invalid-email.png)
