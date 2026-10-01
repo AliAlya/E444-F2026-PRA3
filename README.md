@@ -55,3 +55,15 @@ I tested the required cases:
 - A valid non-UofT email produces a UofT email error.
 
 ![Activity 1.4 form rejecting a non-UofT email address](screenshots/activity-1-4-invalid-email.png)
+
+## Activities 2.2 and 2.3
+
+I installed Docker Desktop and verified the Docker engine by running the official `hello-world` container. I also updated the application heading to welcome the user to PRA3 Docker.
+
+To verify Docker locally, I used:
+
+```bash
+docker --version
+docker compose version
+docker run --rm hello-world
+```
