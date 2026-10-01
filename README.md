@@ -98,3 +98,25 @@ To stop and remove the container before rebuilding it, use:
 docker stop pra3-flask
 docker rm pra3-flask
 ```
+
+## Activity 2.5
+
+After the name and UofT email form is submitted successfully, the application redirects to a chatbot page. The chatbot can remember a name across separate requests in the same browser session.
+
+Example conversation:
+
+```text
+User: My name is Alice.
+Bot: Nice to meet you, Alice!
+
+User: What is my name?
+Bot: Your name is Alice.
+```
+
+I tested the memory and logout flow by teaching the chatbot a name, asking it to recall the name, logging out, signing in through the form again, and asking the same question. After logout, the chatbot responds that it does not know the earlier name.
+
+### How the chatbot memory works
+
+The chatbot stores the remembered name in `session["chat_name"]`. Flask's default session is stored in a cryptographically signed cookie in the browser. The browser automatically sends that cookie with later requests, which lets Flask associate those requests with the same session. The signature uses the application's `SECRET_KEY` and prevents the client from modifying the session without detection.
+
+The session cookie is signed but not encrypted, so I only store the small amount of information needed for this activity. The Logout button calls `session.clear()`, which removes the form details and chatbot memory without restarting the application.
