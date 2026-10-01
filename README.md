@@ -67,3 +67,34 @@ docker --version
 docker compose version
 docker run --rm hello-world
 ```
+
+## Activity 2.4
+
+I added a Dockerfile and a pinned `requirements.txt` so the Flask application can run in a container.
+
+Build the image from the repository root:
+
+```bash
+docker build -t pra3-flask:latest .
+```
+
+Run the application in the background and publish it on port 5000:
+
+```bash
+docker run -d --name pra3-flask -p 5000:5000 \
+  -e SECRET_KEY=pra3-local-demo-key pra3-flask:latest
+```
+
+Open <http://localhost:5000> and confirm that the page loads. To view the container and its logs, use:
+
+```bash
+docker ps -a
+docker logs pra3-flask
+```
+
+To stop and remove the container before rebuilding it, use:
+
+```bash
+docker stop pra3-flask
+docker rm pra3-flask
+```

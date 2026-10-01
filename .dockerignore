@@ -1,0 +1,9 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+.DS_Store
+.env
+ECE444 PRA3 Flask and Docker.pdf
+screenshots
